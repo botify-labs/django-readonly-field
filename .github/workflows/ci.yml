@@ -71,26 +71,34 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install poetry
+        run: pip install poetry
+
       - name: Set up Python
         id: setup-python
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python_version }}
+          cache: "poetry"
 
-      - name: Pip cache
-        uses: actions/cache@v2
-        with:
-          path: |
-            ~/.cache/
-          key: ${{ steps.setup-python.outputs.python-version }}-${{ hashFiles('setup.py') }}
+      - name: Configure Poetry to use Python ${{ matrix.python_version }}
+        run: poetry env use "${{ matrix.python_version }}"
 
-      - name: Install Tox
-        run: pip install tox
+      - name: Install deps
+        run: poetry install
+
+      # - name: Install Tox
+      #   run: pip install tox
 
       - name: Run ${{ matrix.name }}
         run: tox -e ${{ matrix.tox_env }}
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
+
+      - name: Display coverage
+        uses: ewjoachim/coverage-comment-action@v1
+        with:
+          GITHUB_TOKEN: ${{ github.token }}
 
   report-status:
     name: success

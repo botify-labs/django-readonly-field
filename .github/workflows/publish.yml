@@ -3,8 +3,8 @@ name: Deploy
 on:
   push:
     tags:
-      - '*'
-      
+      - "*"
+
 jobs:
   deploy:
     name: Publish package to PyPI
@@ -12,14 +12,20 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
+      - name: Install poetry
+        run: |
+          pip install poetry
+          pip install poetry-dynamic-versioning
+
       - name: Set up Python
         id: setup-python
         uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python_version }}
+          cache: "poetry"
 
-      - name: Install
-        run: pip install build
+      - name: Install dependencies
+        run: poetry install
 
       - name: Wait for tests to succeed
         uses: fountainhead/action-wait-for-check@v1.0.0
@@ -28,15 +34,11 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           checkName: success
 
-      - name: Build package
-        run: python -m build
-
       - name: Exit if CI did not succeed
         if: steps.wait-for-ci.outputs.conclusion != 'success'
         run: exit 1
 
-      - name: Publish a Python distribution to PyPI
-        uses: pypa/gh-action-pypi-publish@release/v1
-        with:
-          user: __token__
-          password: "${{ secrets.PYPI_TOKEN }}"
+      - name: Publish on PyPI
+        run: poetry publish --no-interaction --build --username "__token__" --password "$PYPI_TOKEN"
+        env:
+          PYPI_TOKEN: "${{ secrets.PYPI_TOKEN }}"

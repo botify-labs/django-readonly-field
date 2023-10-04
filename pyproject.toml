@@ -57,9 +57,6 @@ pattern = '(?P<base>\d+\.\d+\.\d+)'
 [tool.isort]
 profile = "black"
 
-[tool.flake8]
-ignore = "E501"
-
 [tool.doc8]
 max-line-length = 88
 ignore-path = "docs/_build"

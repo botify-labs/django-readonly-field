@@ -69,36 +69,35 @@ jobs:
           - 5432:5432
 
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Install poetry
-        run: pip install poetry
+      - uses: actions/checkout@v4
 
       - name: Set up Python
         id: setup-python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v4
         with:
           python-version: ${{ matrix.python_version }}
-          cache: "poetry"
+          cache: pip
 
-      - name: Configure Poetry to use Python ${{ matrix.python_version }}
-        run: poetry env use "${{ matrix.python_version }}"
-
-      - name: Install deps
-        run: poetry install
-
-      # - name: Install Tox
-      #   run: pip install tox
+      - name: Install tox
+        run: pipx install tox
 
       - name: Run ${{ matrix.name }}
         run: tox -e ${{ matrix.tox_env }}
         env:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
 
-      - name: Display coverage
-        uses: ewjoachim/coverage-comment-action@v1
+      - name: Coverage comment
+        id: coverage_comment
+        uses: py-cov-action/python-coverage-comment-action@v3
         with:
           GITHUB_TOKEN: ${{ github.token }}
+
+      - name: Store Pull Request comment to be posted
+        uses: actions/upload-artifact@v3
+        if: steps.coverage_comment.outputs.COMMENT_FILE_WRITTEN == 'true'
+        with:
+          name: python-coverage-comment-action
+          path: python-coverage-comment-action.txt
 
   report-status:
     name: success

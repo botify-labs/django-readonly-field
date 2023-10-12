@@ -72,4 +72,5 @@ filterwarnings = [
     "error",
     "ignore:.*distutils Version classes are deprecated.*:DeprecationWarning",
     "ignore:.*_SixMetaPathImporter",
+    "ignore:.*cgi",
 ]

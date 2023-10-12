@@ -74,3 +74,6 @@ filterwarnings = [
     "ignore:.*_SixMetaPathImporter",
     "ignore:.*cgi",
 ]
+
+[tool.coverage.run]
+relative_files = true

@@ -1,4 +1,79 @@
 [build-system]
-requires = ["setuptools>=45", "wheel", "setuptools_scm>=6.2"]
+requires = ["poetry-core", "poetry-dynamic-versioning"]
+build-backend = "poetry_dynamic_versioning.backend"
 
-[tool.setuptools_scm]
+[tool.poetry]
+name = "django-readonly-field"
+version = "0.0.0"
+description = "Make Django model fields readonly"
+authors = ["Joachim Jablon <ewjoachim@gmail.com>"]
+maintainers = ["Sofien Ben Ayed <sofien@botify.com>"]
+license = "MIT"
+readme = "README.rst"
+repository = "https://github.com/botify-labs/django-readonly-field"
+documentation = "https://django-readonly-field.readthedocs.io/en/latest/"
+keywords = ["django", "posgresql", "read-only"]
+classifiers = [
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Development Status :: 5 - Production/Stable",
+    "Framework :: Django",
+    "Framework :: Django :: 2.2",
+    "Framework :: Django :: 3.0",
+    "Framework :: Django :: 3.1",
+    "Framework :: Django :: 3.2",
+    "Framework :: Django :: 4.0",
+    "Framework :: Django :: 4.1",
+    "Framework :: Django :: 4.2",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+django = "^2.2"
+
+[tool.poetry.group.dev.dependencies]
+build = "*"
+dj-database-url = "*"
+flake8 = "*"
+psycopg2-binary = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-django = "*"
+requests = "*"
+Sphinx = "*"
+tox = "*"
+twine = "*"
+
+[tool.poetry-dynamic-versioning]
+enable = true
+pattern = '(?P<base>\d+\.\d+\.\d+)'
+
+[tool.isort]
+profile = "black"
+
+[tool.doc8]
+max-line-length = 88
+ignore-path = "docs/_build"
+
+[tool.pytest.ini_options]
+DJANGO_SETTINGS_MODULE = "tests.readonly_project.settings"
+addopts = """
+    --cov-report term-missing --cov-branch --cov-report html --cov-report term \
+    --cov=django_readonly_field -vv --strict-markers -rfE -s
+"""
+testpaths = ["tests/"]
+filterwarnings = [
+    "error",
+    "ignore:.*distutils Version classes are deprecated.*:DeprecationWarning",
+    "ignore:.*_SixMetaPathImporter",
+    "ignore:.*cgi",
+]
+
+[tool.coverage.run]
+relative_files = true

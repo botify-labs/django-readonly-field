@@ -90,6 +90,12 @@ jobs:
           DATABASE_URL: postgres://postgres:postgres@localhost:5432/test
           COVERAGE_FILE: ".coverage.${{ matrix.tox_env }}"
 
+      - name: Store coverage file
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage
+          path: .coverage.${{ matrix.tox_env }}
+
   coverage:
     name: Coverage
     runs-on: ubuntu-latest

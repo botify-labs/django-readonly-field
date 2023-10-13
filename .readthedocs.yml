@@ -5,6 +5,7 @@
 # Required
 version: 2
 
+# TODO: Remove existing warnings in the Sphinx build, then uncomment the following
 # sphinx:
 #   fail_on_warning: true
 

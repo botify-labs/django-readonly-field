@@ -117,6 +117,8 @@ virtual environment)
 Credits
 ---------
 
+This repository was once available at `peopledoc/django-readonly-field <https://github.com/peopledoc/django-readonly-field>`_.
+
 Tools used in rendering this package:
 
 *  Cookiecutter_

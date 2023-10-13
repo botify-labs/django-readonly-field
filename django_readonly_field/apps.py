@@ -2,11 +2,10 @@ from django.apps import AppConfig
 
 
 class Readonly(AppConfig):
-    name = 'django_readonly_field'
+    name = "django_readonly_field"
 
     def ready(self):
-        from django.db import connections
-        from django.db import utils
+        from django.db import connections, utils
 
         readonly_compiler_module = "django_readonly_field.compiler"
 
@@ -19,7 +18,7 @@ class Readonly(AppConfig):
         def custom_load_backend(*args, **kwargs):
             backend = original_load_backend(*args, **kwargs)
 
-            class ReadOnlyBackend(object):
+            class ReadOnlyBackend:
                 @staticmethod
                 def DatabaseWrapper(*args2, **kwargs2):
                     connection = backend.DatabaseWrapper(*args2, **kwargs2)

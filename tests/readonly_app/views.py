@@ -10,8 +10,8 @@ def test_view(request):
 
     valid = car.manufacturer == "Renault"
     return http.HttpResponse(
-        content_type="text/plain",
-        content="OK" if valid else "Fail")
+        content_type="text/plain", content="OK" if valid else "Fail"
+    )
 
 
 urlpatterns = [path("", test_view)]

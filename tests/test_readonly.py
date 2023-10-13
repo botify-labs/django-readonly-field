@@ -1,18 +1,14 @@
-from contextlib import contextmanager
 import json
+from contextlib import contextmanager
 
 import requests
-
-from django.test import TestCase
-from django.test import LiveServerTestCase
-from django.db import connection
-from django.test.utils import CaptureQueriesContext
 from django.core import serializers
+from django.db import connection
+from django.test import LiveServerTestCase, TestCase
+from django.test.utils import CaptureQueriesContext
 
 # Create your tests here.
-from tests.readonly_app.models import Car
-from tests.readonly_app.models import Bus
-from tests.readonly_app.models import Book
+from tests.readonly_app.models import Book, Bus, Car
 
 
 class ReadonlyFieldTest(TestCase):

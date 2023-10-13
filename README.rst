@@ -22,7 +22,7 @@ Django Readonly Field
     :target: https://django-readonly-field.readthedocs.io/
     :alt: Documentation
 
-.. image:: https://img.shields.io/endpoint?logo=codecov&logoColor=white&url=https://raw.githubusercontent.com/wiki/botify-labs/django-readonly-field/python-coverage-comment-action-badge.json
+.. image:: https://raw.githubusercontent.com/botify-labs/django-readonly-field/python-coverage-comment-action-data/badge.svg
     :target: https://github.com/botify-labs/django-readonly-field/tree/python-coverage-comment-action-data
     :alt: Coverage
 

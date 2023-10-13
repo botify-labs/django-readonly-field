@@ -5,9 +5,9 @@
 | Name                                    |    Stmts |     Miss |   Branch |   BrPart |   Cover |   Missing |
 |---------------------------------------- | -------: | -------: | -------: | -------: | ------: | --------: |
 | django\_readonly\_field/\_\_init\_\_.py |        4 |        0 |        2 |        1 |     83% |   6->exit |
-| django\_readonly\_field/apps.py         |       20 |        0 |        4 |        0 |    100% |           |
-| django\_readonly\_field/compiler.py     |       39 |        0 |       12 |        0 |    100% |           |
-|                               **TOTAL** |   **63** |    **0** |   **18** |    **1** | **99%** |           |
+| django\_readonly\_field/apps.py         |       19 |        0 |        4 |        0 |    100% |           |
+| django\_readonly\_field/compiler.py     |       37 |        0 |       12 |        0 |    100% |           |
+|                               **TOTAL** |   **60** |    **0** |   **18** |    **1** | **99%** |           |
 
 
 ## Setup coverage badge

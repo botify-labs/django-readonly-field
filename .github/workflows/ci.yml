@@ -44,14 +44,6 @@ jobs:
             python_version: "3.11"
             tox_env: py311-django42
 
-          - name: Lint
-            python_version: "3"
-            tox_env: lint
-
-          - name: Docs
-            python_version: "3"
-            tox_env: docs
-
     name: "${{ matrix.name }}"
     runs-on: ubuntu-latest
 

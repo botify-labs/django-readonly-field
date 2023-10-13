@@ -2,13 +2,11 @@ from django.db import models
 
 
 class Car(models.Model):
-
     wheel_number = models.IntegerField()
     manufacturer = models.CharField(max_length=100)
 
     def __str__(self):
-        return "{car.manufacturer} Car with {car.wheel_number} wheels".format(
-            car=self)
+        return "{car.manufacturer} Car with {car.wheel_number} wheels".format(car=self)
 
     class ReadonlyMeta:
         readonly = ["manufacturer"]
@@ -18,6 +16,7 @@ class Book(models.Model):
     """
     A completely different model
     """
+
     ref = models.IntegerField()
     iban = models.CharField(max_length=100)
     name = models.CharField(max_length=250)
@@ -39,8 +38,7 @@ class Bus(models.Model):
     manufacturer = models.CharField(max_length=100)
 
     def __str__(self):
-        return "{car.manufacturer} Bus with {car.wheel_number} wheels".format(
-            car=self)
+        return "{car.manufacturer} Bus with {car.wheel_number} wheels".format(car=self)
 
     class ReadonlyMeta:
         readonly = ["wheel_number"]

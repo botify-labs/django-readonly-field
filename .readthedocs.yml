@@ -1,0 +1,20 @@
+# .readthedocs.yml
+# Read the Docs configuration file
+# See https://docs.readthedocs.io/en/stable/config-file/v2.html for details
+
+# Required
+version: 2
+
+# TODO: Remove existing warnings in the Sphinx build, then uncomment the following
+# sphinx:
+#   fail_on_warning: true
+
+build:
+  os: ubuntu-20.04
+  tools:
+    python: '3'
+  jobs:
+    post_install:
+      - pip install -U poetry
+      - poetry config virtualenvs.create false
+      - poetry install

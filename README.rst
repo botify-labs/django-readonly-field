@@ -2,14 +2,33 @@
 Django Readonly Field
 =============================
 
-.. image:: https://badge.fury.io/py/django-readonly-field.png
+.. image:: https://img.shields.io/pypi/v/django-readonly-field?logo=pypi&logoColor=white
     :target: https://pypi.org/pypi/django-readonly-field
+    :alt: Deployed to PyPI
 
-.. image:: https://travis-ci.org/peopledoc/django-readonly-field.png?branch=master
-    :target: https://travis-ci.org/peopledoc/django-readonly-field
+.. image:: https://img.shields.io/pypi/pyversions/django-readonly-field?logo=pypi&logoColor=white
+    :target: https://pypi.org/pypi/django-readonly-field
+    :alt: Python library
 
-.. image:: https://img.shields.io/codecov/c/github/peopledoc/django-readonly-field/master.svg
-    :target: https://codecov.io/github/peopledoc/django-readonly-field?branch=master
+.. image:: https://img.shields.io/github/stars/botify-labs/django-readonly-field?logo=github
+    :target: https://github.com/botify-labs/django-readonly-field/
+    :alt: GitHub Repository
+
+.. image:: https://img.shields.io/github/actions/workflow/status/botify-labs/django-readonly-field/ci.yml?logo=github&branch=main
+    :target: https://github.com/botify-labs/django-readonly-field/actions?workflow=CI
+    :alt: Continuous Integration
+
+.. image:: https://img.shields.io/readthedocs/django-readonly-field/stable?logo=read-the-docs&logoColor=white
+    :target: https://django-readonly-field.readthedocs.io/
+    :alt: Documentation
+
+.. image:: https://img.shields.io/endpoint?logo=codecov&logoColor=white&url=https://raw.githubusercontent.com/wiki/botify-labs/django-readonly-field/python-coverage-comment-action-badge.json
+    :target: https://github.com/botify-labs/django-readonly-field/tree/python-coverage-comment-action-data
+    :alt: Coverage
+
+.. image:: https://img.shields.io/github/license/botify-labs/django-readonly-field?logo=open-source-initiative&logoColor=white
+    :target: https://github.com/botify-labs/django-readonly-field/blob/master/LICENSE
+    :alt: MIT License
 
 Make some Django model fields readonly. In other words, it lets you tell Django to
 read some fields from your database, but never try to write those back. It can be

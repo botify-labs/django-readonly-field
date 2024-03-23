@@ -2,31 +2,33 @@
 Django Readonly Field
 =============================
 
-.. image:: https://img.shields.io/pypi/v/django-readonly-field?logo=pypi&logoColor=white
+|pypi| |version| |github| |ci| |doc| |cov| |license|
+
+.. |pypi| image:: https://img.shields.io/pypi/v/django-readonly-field?logo=pypi&logoColor=white
     :target: https://pypi.org/pypi/django-readonly-field
     :alt: Deployed to PyPI
 
-.. image:: https://img.shields.io/pypi/pyversions/django-readonly-field?logo=pypi&logoColor=white
+.. |version| image:: https://img.shields.io/pypi/pyversions/django-readonly-field?logo=pypi&logoColor=white
     :target: https://pypi.org/pypi/django-readonly-field
     :alt: Python library
 
-.. image:: https://img.shields.io/github/stars/botify-labs/django-readonly-field?logo=github
+.. |github| image:: https://img.shields.io/github/stars/botify-labs/django-readonly-field?logo=github
     :target: https://github.com/botify-labs/django-readonly-field/
     :alt: GitHub Repository
 
-.. image:: https://img.shields.io/github/actions/workflow/status/botify-labs/django-readonly-field/ci.yml?logo=github&branch=main
+.. |ci| image:: https://img.shields.io/github/actions/workflow/status/botify-labs/django-readonly-field/ci.yml?logo=github&branch=main
     :target: https://github.com/botify-labs/django-readonly-field/actions?workflow=CI
     :alt: Continuous Integration
 
-.. image:: https://img.shields.io/readthedocs/django-readonly-field/stable?logo=read-the-docs&logoColor=white
+.. |doc| image:: https://img.shields.io/readthedocs/django-readonly-field/stable?logo=read-the-docs&logoColor=white
     :target: https://django-readonly-field.readthedocs.io/
     :alt: Documentation
 
-.. image:: https://raw.githubusercontent.com/botify-labs/django-readonly-field/python-coverage-comment-action-data/badge.svg
+.. |cov| image:: https://raw.githubusercontent.com/botify-labs/django-readonly-field/python-coverage-comment-action-data/badge.svg
     :target: https://github.com/botify-labs/django-readonly-field/tree/python-coverage-comment-action-data
     :alt: Coverage
 
-.. image:: https://img.shields.io/github/license/botify-labs/django-readonly-field?logo=open-source-initiative&logoColor=white
+.. |license| image:: https://img.shields.io/github/license/botify-labs/django-readonly-field?logo=open-source-initiative&logoColor=white
     :target: https://github.com/botify-labs/django-readonly-field/blob/master/LICENSE
     :alt: MIT License
 

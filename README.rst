@@ -40,8 +40,8 @@ Requirements
 ------------
 
 + **Postgresql only**
-+ Django, tested from 2.2 to 4.2
-+ With Python, tested from 3.8 to 3.11
++ Django, tested from 4.2 to 5.1
++ With Python, tested from 3.8 to 3.12
 
 Documentation
 -------------

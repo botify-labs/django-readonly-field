@@ -16,10 +16,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - name: Python 3.7 / Django 2.2
-            python_version: "3.7"
-            tox_env: py37-django22
-
           - name: Python 3.8 / Django 3.0
             python_version: "3.8"
             tox_env: py38-django30

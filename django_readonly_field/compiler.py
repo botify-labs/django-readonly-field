@@ -3,12 +3,8 @@ from django.db.models.sql.compiler import (
     SQLCompiler,
     SQLDeleteCompiler,
 )
-from django.db.models.sql.compiler import (  # noqa
-    SQLInsertCompiler as BaseSQLInsertCompiler,
-)
-from django.db.models.sql.compiler import (  # noqa
-    SQLUpdateCompiler as BaseSQLUpdateCompiler,
-)
+from django.db.models.sql.compiler import SQLInsertCompiler as BaseSQLInsertCompiler  # noqa
+from django.db.models.sql.compiler import SQLUpdateCompiler as BaseSQLUpdateCompiler  # noqa
 
 SQLCompiler = SQLCompiler
 SQLDeleteCompiler = SQLDeleteCompiler
